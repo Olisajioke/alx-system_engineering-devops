@@ -8,3 +8,4 @@ I created multiple permissions for a file
 I created a script that allows permission for everyone
 I wrote a scripr that gives owner no permission, group no permission but grants other users permission
 IWROTE A SCRIPT THAT SETS THE MODE OF A FILE
+I wrote a script that sets the mode of the file hello as same as olleh's mode
