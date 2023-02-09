@@ -6,3 +6,4 @@ I created an empty file
 I wrote a script that adds execute permission to the owner of a file
 I created multiple permissions for a file
 I created a script that allows permission for everyone
+I wrote a scripr that gives owner no permission, group no permission but grants other users permission
