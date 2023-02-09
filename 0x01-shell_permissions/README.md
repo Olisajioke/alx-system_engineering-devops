@@ -12,3 +12,4 @@ I wrote a script that sets the mode of the file hello as same as olleh's mode
 I created a script that execute permission to all directories
 I created a script that creates a directory with permissions 751
 I wrote a script that changes the group owner
+I wrote a script that changes the owner and group owner for all files and directories
