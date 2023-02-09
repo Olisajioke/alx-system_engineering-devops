@@ -5,3 +5,4 @@ I changed file ownership
 I created an empty file
 I wrote a script that adds execute permission to the owner of a file
 I created multiple permissions for a file
+I created a script that allows permission for everyone
