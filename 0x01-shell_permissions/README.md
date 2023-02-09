@@ -11,3 +11,4 @@ IWROTE A SCRIPT THAT SETS THE MODE OF A FILE
 I wrote a script that sets the mode of the file hello as same as olleh's mode
 I created a script that execute permission to all directories
 I created a script that creates a directory with permissions 751
+I wrote a script that changes the group owner
