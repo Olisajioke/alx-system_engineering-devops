@@ -1,0 +1,2 @@
+#!/bin/bash
+echo "replace A and c characters" | tr 'Ac' 'Ze'
