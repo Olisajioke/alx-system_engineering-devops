@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "remove all c and C characters" | tr -d 'cC'
+tr -d cC
