@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# shellcheck disable=SC2009
+
+# Use ps to list all processes and filter lines containing "bash"
+ps -eo pid,cmd --sort=start_time | grep -i 'bash'
