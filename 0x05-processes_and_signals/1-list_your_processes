@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Use ps to list all processes and format the output
 ps -eo pid,ppid,user,args --forest --sort=start_time | awk '{
