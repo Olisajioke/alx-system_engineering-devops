@@ -1,1 +1,8 @@
-g
+#!/bin/bash
+
+trap 'echo "I am invincible!!!"; exit' SIGTERM
+
+while true; do
+  echo "To infinity and beyond"
+  sleep 2
+done
