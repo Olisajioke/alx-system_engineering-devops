@@ -1,4 +1,3 @@
 #!/usr/bin/env bash
-
-#shows the curretn working ID
+#shows the current working process identificartion PID
 echo "My PID is: $$"
