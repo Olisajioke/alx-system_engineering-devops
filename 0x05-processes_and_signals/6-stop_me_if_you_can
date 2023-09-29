@@ -1,13 +1,8 @@
 #!/bin/bash
 
-# Find the PID of the "4-to_infinity_and_beyond" process
-pid=$(pgrep -o "4-to_infinity_and_beyond")
+trap 'echo "I am invincible!!!"; exit' SIGTERM
 
-if [ -n "$pid" ]; then
-  # If the process was found, terminate it gracefully
-  echo "Stopping 4-to_infinity_and_beyond (PID: $pid)..."
-  kill "$pid"
-  echo "Process terminated."
-else
-  echo "4-to_infinity_and_beyond process not found."
-fi
+while true; do
+  echo "To infinity and beyond"
+  sleep 2
+done
