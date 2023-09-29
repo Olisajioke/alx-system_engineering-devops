@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#prints a string to the comandline and exits upon signal
 trap 'echo "I am invincible!!!"; exit' SIGTERM
 
 while true; do

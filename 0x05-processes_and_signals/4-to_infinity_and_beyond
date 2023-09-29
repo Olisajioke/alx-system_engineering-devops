@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-
+#prints a string to the commandline
 while true; do
   echo "To infinity and beyond"
   sleep 2

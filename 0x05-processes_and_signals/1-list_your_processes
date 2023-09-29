@@ -1,6 +1,5 @@
 #!/usr/bin/env bash
 # Use ps to list all processes and format the output
-
 ps -eo pid,ppid,user,args --forest --sort=start_time | awk '{
   printf "%-7s %-7s %-15s %s\n", $1, $2, $3, $4
 }'

@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 # Function to remove PID file and exit
 cleanup() {
   echo "Cleaning up and exiting..."
