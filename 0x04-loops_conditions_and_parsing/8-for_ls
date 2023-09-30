@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # This script lists files in the current directory, displaying only the part of>
 
 for file in *; do
