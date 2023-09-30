@@ -7,12 +7,12 @@ do
         case $num in
                 "4")
                 echo "4"
-                echo "bad luck from china"
+                echo "bad luck from China"
                 ;;
 
                 "9")
                 echo "9"
-                echo "bad luck from japan"
+                echo "bad luck from Japan"
                 ;;
 
                 "17")
