@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+#bash script that prints out a string to stdo using until
+num=0
+until [ $num -eq 10 ]
+do
+	echo "Best School"
+	((num++))
+done
