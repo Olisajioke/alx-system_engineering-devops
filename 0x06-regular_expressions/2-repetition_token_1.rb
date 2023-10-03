@@ -1,21 +1,17 @@
 #!/usr/bin/env ruby
-# regex_matcher.rb
 
-
-if ARGV.empty?
-  puts "Please provide an input string as an argument."
-else
-  input_string = ARGV[0]
-
-
-  regex = /^h(b*t)n$/
-
-  matches = input_string.scan(regex)
-
-  if matches.empty?
-    puts "No matches found."
-  else
-    puts "Matches found: #{matches.join(', ')}"
-  end
+if ARGV.length != 1
+  puts "Usage: #{$PROGRAM_NAME} <input_string>"
+  exit(1)
 end
 
+pattern = /hb*tn/
+input_string = ARGV[0]
+
+match = pattern.match(input_string)
+
+if match
+  puts match[0]
+else
+  puts ''
+end
