@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby
-
+#Ruby code  that prints hbt and hbttn
 if ARGV.length != 1
   puts "Usage: #{$PROGRAM_NAME} <input_string>"
   exit(1)
