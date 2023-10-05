@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# Listen on port 98 on localhost
+
+while true; do
+    { echo -ne "HTTP/1.1 200 OK\r\n\r\n$(date)\r\n"; } | nc -l -p 98 -q 1
+done
+
