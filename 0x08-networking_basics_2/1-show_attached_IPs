@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# Get the hostname of the machine
+
+hostname=$(hostname)
+device_ipv4=$(ping -c 1 "$hostname" | grep "PING $hostname" | awk '{print $3}' | tr -d '()')
+
+localhost_ipv4="127.0.0.1"
+
+echo "$device_ipv4"
+echo "$localhost_ipv4"
