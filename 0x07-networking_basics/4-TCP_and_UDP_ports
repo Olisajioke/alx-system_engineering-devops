@@ -1,0 +1,35 @@
+#!/usr/bin/env bash
+# Display listening ports with PID and program name
+
+if [ "$(id -u)" != "0" ]; then
+  echo "This script must be run as root."
+  exit 1
+fi
+
+echo "Active Internet connections (only servers)"
+echo "Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name"
+
+netstat -tuln | awk '$6 == "LISTEN" {print $1, $4, $7}' | while IFS= read -r proto local foreign; do
+  pid=$(lsof -i -n -P | grep -E "$local.*LISTEN" | awk '{print $2}')
+  program=$(ps -p "$pid" -o comm=)
+  echo "$proto $local $foreign $pid/$program"
+done
+
+echo "Active UDP connections (servers)"
+echo "Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name"
+
+netstat -uln | awk '{if ($1 == "udp") print $1, $4, $6}' | while IFS= read -r proto local foreign; do
+  pid=$(lsof -i -n -P | grep -E "$local.*$proto" | awk '{print $2}')
+  program=$(ps -p "$pid" -o comm=)
+  echo "$proto $local $foreign $pid/$program"
+done
+
+echo "Active UNIX domain sockets (only servers)"
+echo "Proto RefCnt Flags       Type       State         I-Node   PID/Program name    Path"
+
+netstat -lx | grep "^unix" | awk '{print $1, $2, $3, $4, $5, $6}' | while IFS= read -r proto refcnt flags type state inode; do
+  pid=$(lsof -U -n -P | grep "$inode" | awk '{print $2}')
+  program=$(ps -p "$pid" -o comm=)
+  path=$(echo "$type $state $inode" | awk -F '[()]' '{print $2}')
+  echo "$proto $refcnt $flags $type $state $inode $pid/$program $path"
+done
