@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # This script configures DNS resolution for localhost and facebook.com.
 if [ -f /.dockerenv ]; then
-    # Modify the hosts file to set localhost to 127.0.0.2 and facebook.com to 8.8.8.8
     echo "127.0.0.2 localhost" >> /etc/hosts
     echo "8.8.8.8 facebook.com" >> /etc/hosts
     echo "DNS configuration updated."
