@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Puppet module to configure SSH client settings
 
-file {'/etc/ssh/ssh_config':
+file { '/etc/ssh/ssh_config':
   ensure -> present,
 }
 
