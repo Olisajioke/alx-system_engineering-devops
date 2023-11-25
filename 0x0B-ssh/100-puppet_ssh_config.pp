@@ -1,4 +1,4 @@
-#!/usr/bin/env puppet
+#!/usr/bin/env bash
 # Puppet module to configure SSH client settings
 file_line { 'Turn off passwd auth':
   path   => '/etc/ssh/sshd_config', # Path to the SSH server config file
