@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 '''A python script that gathers employee data from API'''
 
+import re
 import requests
 import sys
-import re
 
 REST_API = "https://jsonplaceholder.typicode.com"
 
