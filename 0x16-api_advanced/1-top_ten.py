@@ -8,7 +8,7 @@ import json
 
 def top_ten(subreddit):
     '''A function that returns the top ten posts for a given subreddit'''
-    user_agent = {'User-Agent': 'Mozilla/5.0'}
+    user_agent = {'User-Agent': 'Bright'}
 
     url = requests.get(
         'https://www.reddit.com/r/{}/hot/.json?limit=10'.format(subreddit),

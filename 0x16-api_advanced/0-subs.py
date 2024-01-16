@@ -6,7 +6,7 @@ from sys import argv
 
 def number_of_subscribers(subreddit):
     '''A function that returns the number of subs for a subreddit'''
-    user_agent = {'User-Agent': 'Joel/1.0'}
+    user_agent = {'User-Agent': 'Bright'}
     url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
 
     try:
