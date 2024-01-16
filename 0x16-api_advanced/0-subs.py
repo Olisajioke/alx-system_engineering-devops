@@ -1,31 +1,19 @@
-#!/usr/bin/env python3
-""" fUNCTION THAT RETURNS SUBSCRIBERS"""
+#!/usr/bin/python3
+'''  Module that contains the function number_of_subscribers'''
 import requests
+from sys import argv
 
 
 def number_of_subscribers(subreddit):
-    """
-    Get the number of subscribers for a given subreddit.
-
-    Args:
-    - subreddit (str): The name of the subreddit.
-
-    Returns:
-    - int: Number of subscribers for the subreddit. Returns 0
-    """
-
-    api_url = f"https://www.reddit.com/r/{subreddit}/about.json"
-
+    '''A function that returns the number of subs for a subreddit'''
+    user = {'User-Agent': 'Olisa/1.0'}
+    url = requests.get('https://www.reddit.com/r/{}/about.json'
+                       .format(subreddit), headers=user).json()
     try:
-        headers = {'User-Agent': 'Paul'}
+        return url.get('data').get('subscribers')
+    except Exception:
+        return 0
 
-        response = requests.get(api_url, headers=headers)
 
-        if response.status_code == 200:
-            data = response.json()
-            subscribers = data['data']['subscribers']
-            return subscribers
-        else:
-            return 0
-    except Exception as e:
-        print(f"An error occurred: {e}")
+if __name__ == "__main__":
+    number_of_subscribers(argv[1])
