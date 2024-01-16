@@ -1,13 +1,13 @@
 #!/usr/bin/python3
-'''  Module that contains the function number_of_subscribers'''
+'''Module that contains the function number_of_subscribers'''
 import requests
 from sys import argv
 
 
 def number_of_subscribers(subreddit):
     '''A function that returns the number of subs for a subreddit'''
-    user_agent = {'User-Agent': 'Olisa/1.0'}
-    url = f'https://www.reddit.com/r/{subreddit}/about.json'
+    user_agent = {'User-Agent': 'Joel/1.0'}
+    url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
 
     try:
         response = requests.get(url, headers=user_agent)
@@ -18,7 +18,7 @@ def number_of_subscribers(subreddit):
 
         return subscribers
     except requests.RequestException as e:
-        print(f"Error: {e}")
+        print("Error: {}".format(e))
         return 0
 
 
@@ -26,7 +26,7 @@ if __name__ == "__main__":
     if len(argv) == 2:
         subreddit_name = argv[1]
         subscribers_count = number_of_subscribers(subreddit_name)
-        print(f"The subreddit '{subreddit_name}' "
-              f"has {subscribers_count} subscribers.")
+        print("The subreddit '{}' has {} "
+              "subscribers.".format(subreddit_name, subscribers_count))
     else:
         print("Usage: python script.py <subreddit_name>")
